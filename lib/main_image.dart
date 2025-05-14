@@ -35,7 +35,9 @@ class MainImage extends StatelessWidget {
                       "NEVER BEGIN\n",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 55))*/
                             DefaultTextStyle(
                                 style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 55),
-                                child: AnimatedTextKit(animatedTexts: [
+                                child: AnimatedTextKit(
+                                  totalRepeatCount: 1,
+                                    animatedTexts: [
                                   TypewriterAnimatedText("THE ONLY\n"
                                       "IMPOSSIBLE\n"
                                       "JOURNEY IS\n"

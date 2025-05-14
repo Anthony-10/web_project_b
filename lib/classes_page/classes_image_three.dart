@@ -74,6 +74,8 @@ class _ClassesImageThreeState extends State<ClassesImageThree> {
                           .withOpacity(isHover3 ? 1 : 0.6):Colors.white),
                   child: const Text(
                     'CROSSFIT - FEMALE ONLY',
+                    style: TextStyle(
+                        color: Colors.white,),
                   ),
                 ),
               ),

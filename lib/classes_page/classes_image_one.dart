@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../responsive.dart';
 
-
 class ClassesImageOne extends StatefulWidget {
   const ClassesImageOne({super.key});
 
@@ -11,7 +10,6 @@ class ClassesImageOne extends StatefulWidget {
 }
 
 class _ClassesImageOneState extends State<ClassesImageOne> {
-
   bool isHover1 = false;
   bool isHover12 = false;
 
@@ -23,7 +21,6 @@ class _ClassesImageOneState extends State<ClassesImageOne> {
       onEnter: (e) {
         setState(() {
           isHover1 = true;
-
         });
       },
       onHover: (e) {
@@ -71,10 +68,14 @@ class _ClassesImageOneState extends State<ClassesImageOne> {
                   duration: const Duration(milliseconds: 1000),
                   style: TextStyle(
                       fontSize: 25,
-                      color: (!Responsive.isMobile(context))?Colors.white
-                          .withOpacity(isHover1 ? 1 : 0.6):Colors.white),
+                      color: (!Responsive.isMobile(context))
+                          ? Colors.white.withOpacity(isHover1 ? 1 : 0.6)
+                          : Colors.white),
                   child: const Text(
                     'CROSSFIT - BEGINNERS CLASS',
+                    style: TextStyle(
+                        color: Colors.white,
+                        ),
                   ),
                 ),
               ),
@@ -84,9 +85,9 @@ class _ClassesImageOneState extends State<ClassesImageOne> {
               curve: Curves.easeOutCubic,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
-                    Colors.black.withOpacity(isHover1 ? 0.8 : 0),
-                    Colors.transparent
-                  ])),
+                Colors.black.withOpacity(isHover1 ? 0.8 : 0),
+                Colors.transparent
+              ])),
               child: const SizedBox(
                 width: 500,
                 height: 600,

@@ -73,6 +73,8 @@ class _ClassesImageTwoState extends State<ClassesImageTwo> {
                           .withOpacity(isHover2 ? 1 : 0.6):Colors.white),
                   child: const Text(
                     'CROSSFIT - GYMNASTICS',
+                    style: TextStyle(
+                      color: Colors.white,),
                   ),
                 ),
               ),

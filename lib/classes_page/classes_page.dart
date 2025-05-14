@@ -34,7 +34,7 @@ class _ClassesPageState extends State<ClassesPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text("FEATURED CLASSES1",
+        const Text("FEATURED CLASSES",
             style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
