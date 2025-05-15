@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'controller.dart';
 import 'models/status.dart';
 
 final List<Status> status = [
@@ -21,11 +23,13 @@ class _PortfolioStatusState extends State<PortfolioStatus> {
   var widths = 300.0;
   var heights = 300.0;
 
+  final controller = Get.put(Controller());
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.yellowAccent,
+      color: controller.color,
       child: Padding(
         padding: const EdgeInsets.only(top: 20,left: 70, right: 70,bottom:20),
         child: Center(

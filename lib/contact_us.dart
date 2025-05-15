@@ -36,7 +36,7 @@ class ContactUs extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.only(left: 50, top: 20,  right: 50),
-      color: Colors.yellowAccent,
+      color: controller.color,
       child: Column(
         children: [
           Column(

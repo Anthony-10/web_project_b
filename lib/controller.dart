@@ -9,6 +9,8 @@ class Controller extends GetxController {
     "assets/videos/zumba.mp4"
   ].obs;
 
+  var color = Colors.yellow[400];
+
   var price15 = 0.obs;
   var price = 0;
 

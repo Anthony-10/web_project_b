@@ -2,7 +2,9 @@ import 'dart:math';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../controller.dart';
 import '../responsive.dart';
 
 class TheTeamThree extends StatefulWidget {
@@ -29,6 +31,8 @@ class _TheTeamThreeState extends State<TheTeamThree> {
       clicked = false;
     }));
   }
+
+  final controller = Get.put(Controller());
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +63,7 @@ class _TheTeamThreeState extends State<TheTeamThree> {
             curve: Curves.easeOut,
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 275),
-              color: begin3 == 0.0 ? Colors.yellowAccent : Colors.black,
+              color: begin3 == 0.0 ? controller.color : Colors.black,
               height: 350,
               width: 300,
               child: Transform(

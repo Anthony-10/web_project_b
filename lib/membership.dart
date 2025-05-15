@@ -105,6 +105,8 @@ class _MembershipState extends State<Membership> {
       });
 
   final controller = Get.put(Controller());
+
+  var textColors = Colors.white;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -143,8 +145,6 @@ class _MembershipState extends State<Membership> {
     final transform2 = isHovered2 ? hoveredTransform : Matrix4.identity();
     final transform3 = isHovered3 ? hoveredTransform : Matrix4.identity();
     final transform4 = isHovered4 ? hoveredTransform : Matrix4.identity();
-    final transform5 = isHovered5 ? hoveredTransform : Matrix4.identity();
-    final transform6 = isHovered6 ? hoveredTransform : Matrix4.identity();
 
     return Padding(
       padding: const EdgeInsets.only(top: 50.0, bottom: 20.0),
@@ -174,7 +174,7 @@ class _MembershipState extends State<Membership> {
                   transform: transform1,
                   decoration: BoxDecoration(
                       color: controller.price15.value == 0
-                          ? Colors.grey[400]
+                          ? Colors.transparent
                           : controller.price15.value == 1
                               ? kPrimaryColor
                               : kBgColor,
@@ -187,21 +187,21 @@ class _MembershipState extends State<Membership> {
                     child: Column(
                       children: [
                         RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                                 text: "KSH ",
                                 style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
+                                    color: textColors, fontSize: 20.0),
                                 children: <TextSpan>[
                               TextSpan(
                                   text: "200",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 30.0)),
                               TextSpan(
                                   text: "/day",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0)),
                             ])),
@@ -214,8 +214,8 @@ class _MembershipState extends State<Membership> {
                                         color: e.color,
                                       ),
                                       title: Text(e.title,
-                                          style: const TextStyle(
-                                              /*color: Colors.white*/)),
+                                          style: TextStyle(
+                                              color: textColors)),
                                     ))
                                 .toList()),
                         const SizedBox(height: 10),
@@ -225,7 +225,7 @@ class _MembershipState extends State<Membership> {
                             },
                             style: TextButton.styleFrom(
                               foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
+                                backgroundColor: controller.color,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: kDefaultPadding * 1.5,
                                     vertical: kDefaultPadding)),
@@ -259,7 +259,7 @@ class _MembershipState extends State<Membership> {
                   transform: transform2,
                   decoration: BoxDecoration(
                       color: controller.price15.value == 0
-                          ? Colors.grey[500]
+                          ? Colors.transparent
                           : controller.price15.value == 2
                               ? kPrimaryColor
                               : kBgColor,
@@ -272,21 +272,21 @@ class _MembershipState extends State<Membership> {
                     child: Column(
                       children: [
                         RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                                 text: "KSH ",
                                 style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
+                                    color: textColors, fontSize: 20.0),
                                 children: <TextSpan>[
                               TextSpan(
                                   text: "1K",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 30.0)),
                               TextSpan(
                                   text: "/week",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0)),
                             ])),
@@ -299,8 +299,8 @@ class _MembershipState extends State<Membership> {
                                         color: e.color,
                                       ),
                                       title: Text(e.title,
-                                          style: const TextStyle(
-                                              /*color: Colors.white*/)),
+                                          style: TextStyle(
+                                              color: textColors)),
                                     ))
                                 .toList()),
                         ElevatedButton(
@@ -309,7 +309,7 @@ class _MembershipState extends State<Membership> {
                             },
                             style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
+                                backgroundColor: controller.color,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: kDefaultPadding * 1.5,
                                     vertical: kDefaultPadding)),
@@ -344,7 +344,7 @@ class _MembershipState extends State<Membership> {
                   transform: transform3,
                   decoration: BoxDecoration(
                       color: controller.price15.value == 0
-                          ? Colors.grey[400]
+                          ? Colors.transparent
                           : controller.price15.value == 3
                               ? kPrimaryColor
                               : kBgColor,
@@ -357,21 +357,21 @@ class _MembershipState extends State<Membership> {
                     child: Column(
                       children: [
                         RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                                 text: "KSH ",
                                 style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
+                                    color: textColors, fontSize: 20.0),
                                 children: <TextSpan>[
                               TextSpan(
                                   text: "3K",
                                   style: TextStyle(
-                                     /* color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 30.0)),
                               TextSpan(
                                   text: "/month",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0)),
                             ])),
@@ -385,8 +385,8 @@ class _MembershipState extends State<Membership> {
                                       ),
                                       title: Text(
                                         e.title,
-                                        style: const TextStyle(
-                                            /*color: Colors.white*/),
+                                        style: TextStyle(
+                                            color: textColors),
                                       ),
                                     ))
                                 .toList()),
@@ -396,7 +396,7 @@ class _MembershipState extends State<Membership> {
                             },
                             style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
+                                backgroundColor: controller.color,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: kDefaultPadding * 1.5,
                                     vertical: kDefaultPadding)),
@@ -430,7 +430,7 @@ class _MembershipState extends State<Membership> {
                   transform: transform4,
                   decoration: BoxDecoration(
                       color: controller.price15.value == 0
-                          ? Colors.grey[400]
+                          ? Colors.transparent
                           : controller.price15.value == 4
                               ? kPrimaryColor
                               : kBgColor,
@@ -443,21 +443,21 @@ class _MembershipState extends State<Membership> {
                     child: Column(
                       children: [
                         RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                                 text: "KSH ",
                                 style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
+                                    color: textColors, fontSize: 20.0),
                                 children: <TextSpan>[
                               TextSpan(
                                   text: "200",
                                   style: TextStyle(
-                                     /*color: Colors.white,*/
+                                     color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 30.0)),
                               TextSpan(
                                   text: "/day",
                                   style: TextStyle(
-                                      /*color: Colors.white,*/
+                                      color: textColors,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0)),
                             ])),
@@ -471,8 +471,8 @@ class _MembershipState extends State<Membership> {
                                       ),
                                       title: Text(
                                         e.title,
-                                        style: const TextStyle(
-                                            /*color: Colors.white*/),
+                                        style: TextStyle(
+                                            color: textColors),
                                       ),
                                     ))
                                 .toList()),
@@ -482,179 +482,7 @@ class _MembershipState extends State<Membership> {
                             },
                             style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: kDefaultPadding * 1.5,
-                                    vertical: kDefaultPadding)),
-                            child: const Text("JOIN TODAY",style: TextStyle(
-                                color: Colors.black))),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                controller.price = controller.thirdPrice;
-                controller.memberDetails = "KSH 200 /day";
-              });
-              Get.toNamed("/RegisterMember");
-              controller.price15.value = controller.number5;
-            },
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              onEnter: (event) => onEntered5(true),
-              onExit: (event) => onEntered5(false),
-              child: Obx(
-                () => AnimatedContainer(
-                  padding: const EdgeInsets.only(
-                      left: 10, top: 10, right: 10, bottom: 10),
-                  duration: const Duration(milliseconds: 200),
-                  transform: transform5,
-                  decoration: BoxDecoration(
-                      color: controller.price15.value == 0
-                          ? Colors.grey[400]
-                          : controller.price15.value == 5
-                              ? kPrimaryColor
-                              : kBgColor,
-                      borderRadius: BorderRadius.circular(8.0),
-                      border: Border.all(color: Colors.white)),
-                  width: 220,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(Get.width * .02,
-                        Get.height * .04, Get.width * .02, Get.height * .02),
-                    child: Column(
-                      children: [
-                        RichText(
-                            text: const TextSpan(
-                                text: "KSH ",
-                                style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: "200",
-                                  style: TextStyle(
-                                      /*color: Colors.white,*/
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30.0)),
-                              TextSpan(
-                                  text: "/day",
-                                  style: TextStyle(
-                                      /*color: Colors.white,*/
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15.0)),
-                            ])),
-                        SizedBox(height: Get.height * .04),
-                        Column(
-                            children: pricing5
-                                .map((e) => ListTile(
-                                      leading: Icon(
-                                        e.icon,
-                                        color: e.color,
-                                      ),
-                                      title: Text(
-                                        e.title,
-                                        style: const TextStyle(
-                                            /*color: Colors.white*/),
-                                      ),
-                                    ))
-                                .toList()),
-                        ElevatedButton(
-                            onPressed: () {
-
-                            },
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: kDefaultPadding * 1.5,
-                                    vertical: kDefaultPadding)),
-                            child: const Text("JOIN TODAY",style: TextStyle(
-                                color: Colors.black))),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                controller.price = controller.thirdPrice;
-                controller.memberDetails = "KSH 200 /day";
-              });
-              Get.toNamed("/RegisterMember");
-              controller.price15.value = controller.number6;
-            },
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              onEnter: (event) => onEntered6(true),
-              onExit: (event) => onEntered6(false),
-              child: Obx(
-                () => AnimatedContainer(
-                  padding: const EdgeInsets.only(
-                      left: 10, top: 10, right: 10, bottom: 10),
-                  duration: const Duration(milliseconds: 200),
-                  transform: transform6,
-                  decoration: BoxDecoration(
-                      color: controller.price15.value == 0
-                          ? Colors.grey[400]
-                          : controller.price15.value == 5
-                              ? kPrimaryColor
-                              : kBgColor,
-                      borderRadius: BorderRadius.circular(8.0),
-                      border: Border.all(color: Colors.white)),
-                  width: 220,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(Get.width * .02,
-                        Get.height * .04, Get.width * .02, Get.height * .02),
-                    child: Column(
-                      children: [
-                        RichText(
-                            text: const TextSpan(
-                                text: "KSH ",
-                                style: TextStyle(
-                                    /*color: Colors.white,*/ fontSize: 20.0),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: "200",
-                                  style: TextStyle(
-                                      /*color: Colors.white,*/
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30.0)),
-                              TextSpan(
-                                  text: "/day",
-                                  style: TextStyle(
-                                      /*color: Colors.white,*/
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15.0)),
-                            ])),
-                        SizedBox(height: Get.height * .04),
-                        Column(
-                            children: pricing6
-                                .map((e) => ListTile(
-                                      leading: Icon(
-                                        e.icon,
-                                        color: e.color,
-                                      ),
-                                      title: Text(
-                                        e.title,
-                                        style: const TextStyle(
-                                           /*color: Colors.white*/),
-                                      ),
-                                    ))
-                                .toList()),
-                        ElevatedButton(
-                            onPressed: () {
-
-                            },
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors.yellowAccent,
+                                backgroundColor: controller.color,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: kDefaultPadding * 1.5,
                                     vertical: kDefaultPadding)),

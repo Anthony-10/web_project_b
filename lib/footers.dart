@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../responsive.dart';
+import 'controller.dart';
 
 class Footers extends StatelessWidget {
-  const Footers({super.key});
+   Footers({super.key});
 
+  final controller = Get.put(Controller());
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.yellowAccent,
+      color: controller.color,
       child: Column(
         children: [
           Padding(
