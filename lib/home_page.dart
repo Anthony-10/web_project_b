@@ -20,14 +20,13 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            MainImage(),
             Padding(
               padding: EdgeInsets.only(
                   left: (Responsive.isMobile(context)) ? 5 : 70,
                   right: (Responsive.isMobile(context)) ? 5 : 70),
               child: Column(
                 children: [
-
-                  MainImage(),
                   SizedBox(height: 60),
                   AboutUs(),
                   SizedBox(height: 60),
