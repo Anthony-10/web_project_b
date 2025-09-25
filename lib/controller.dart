@@ -9,6 +9,8 @@ class Controller extends GetxController {
     "assets/videos/zumba.mp4"
   ].obs;
 
+  var titleList = ['Home', 'About Us', 'Gallery','Classes'];
+
   var color = Colors.yellow[400];
 
   var price15 = 0.obs;
@@ -28,9 +30,23 @@ class Controller extends GetxController {
   var pixels = 0.0.obs;
 
   var memberDetails = "";
+  var selectedSection = ''.obs;
 
   AssetImage assetImage = const AssetImage("assets/images/header_image3.jpg");
   AssetImage assetImage1 = const AssetImage("assets/images/header_image2.jpg");
+
+  final List<IconData> icons = [
+    Icons.home,
+    Icons.info,
+    Icons.build,
+    Icons.image,
+    Icons.contact_mail,
+  ];
+
+  void handleNavigation(String section) {
+    selectedSection.value = section;
+    // Do your scroll or navigation logic here
+  }
 
   final itemKey = GlobalKey();
   Future<void> launchTwitter({var urls}) async {

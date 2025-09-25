@@ -15,9 +15,9 @@ class MainImage extends StatefulWidget {
 }
 
 class _MainImageState extends State<MainImage> {
-  var image = "assets/videos/mainVideo1.mp4";
-
   late VideoPlayerController videoPlayerController;
+
+  var image = "assets/videos/mainVideo1.mp4";
 
   final controller = Get.put(Controller());
 
@@ -44,89 +44,64 @@ class _MainImageState extends State<MainImage> {
 
   @override
   Widget build(BuildContext context) {
+    _playVideo();
     double width = MediaQuery.sizeOf(context).width;
     double height = MediaQuery.sizeOf(context).height;
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        AspectRatio(
-          aspectRatio: 16 / 9,
-          child: VideoPlayer(
-            videoPlayerController,
-          ),
-        ),
-        AspectRatio(
-          aspectRatio: 16 / 9,
-          child: Container(
-            color: Colors.black45,
-          ),
-        ),
-        (!Responsive.isMobile(context))
-            ? Positioned(
-                left: width * 0.10,
-                bottom: height * 0.20,
-                child: Column(
-                  children: [
-                    DefaultTextStyle(
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 50),
-                      child: AnimatedTextKit(totalRepeatCount: 1, animatedTexts: [
-                        TypewriterAnimatedText("THE ONLY\n"
-                            "IMPOSSIBLE\n"
-                            "JOURNEY IS\n"
-                            "THE ONE YOU\n"
-                            "NEVER BEGIN\n")
-                      ]),
-                    ),
-
-                    ElevatedButton(
-                        onPressed: () {
-
-                        },
-                        style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: controller.color,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: kDefaultPadding * 1.5,
-                                vertical: kDefaultPadding)),
-                        child: const Text("JOIN TODAY",style: TextStyle(
-                            color: Colors.black))),
-                  ],
-                ),
-              )
-            : Column(
-              children: [
-                DefaultTextStyle(
-                  style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  child: AnimatedTextKit(totalRepeatCount: 1, animatedTexts: [
-                      TypewriterAnimatedText("THE ONLY\n"
-                          "IMPOSSIBLE\n"
-                          "JOURNEY IS\n"
-                          "THE ONE YOU\n"
-                          "NEVER BEGIN\n")
-                    ]),
-                ),
-
-                ElevatedButton(
-                    onPressed: () {
-
-                    },
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: controller.color,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: kDefaultPadding * 1.5,
-                            vertical: kDefaultPadding)),
-                    child: const Text("JOIN TODAY",style: TextStyle(
-                        color: Colors.black))),
-              ],
+    return (!Responsive.isMobile(context))
+        ? Container(
+            width: double.infinity,
+            height: 700,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/mainImage1.jpg'),
+                  fit: BoxFit.fill),
             ),
-      ],
-    );
+            child: Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.topRight,
+                        colors: [Colors.black87, Colors.black12])),
+                child: Align(
+                    alignment: const Alignment(-0.8, 0.1),
+                    child:
+                        /*Text(
+                      "THE ONLY\n"
+                      "IMPOSSIBLE\n"
+                      "JOURNEY IS\n"
+                      "THE ONE YOU\n"
+                      "NEVER BEGIN\n",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 55))*/
+                        Column(
+                      children: [
+                        DefaultTextStyle(
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 55),
+                            child: AnimatedTextKit(
+                                totalRepeatCount: 1,
+                                animatedTexts: [
+                                  TypewriterAnimatedText("THE ONLY\n"
+                                      "IMPOSSIBLE\n"
+                                      "JOURNEY IS\n"
+                                      "THE ONE YOU\n"
+                                      "NEVER BEGIN\n")
+                                ])),
+                        ElevatedButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: controller.color,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: kDefaultPadding * 1.5,
+                                    vertical: kDefaultPadding)),
+                            child: const Text("JOIN TODAY",
+                                style: TextStyle(color: Colors.black))),
+                      ],
+                    ))),
+          )
+        : Image.asset('assets/images/mainImagePhone.png',fit: BoxFit.fill);
+
+
   }
 }
