@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:web_project_b/responsive.dart';
 
+import 'about_us_page.dart';
+
 class AboutUs extends StatelessWidget {
   const AboutUs({super.key});
 
@@ -57,7 +59,12 @@ class AboutUs extends StatelessWidget {
                   const SizedBox(height: 30,),
                   ElevatedButton(
                     onPressed: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) => AboutUsPage(),
+                        ),
+                      );
                       // TODO: Add your onPressed logic here
                     },
                     style:  ButtonStyle(

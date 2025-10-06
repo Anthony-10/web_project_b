@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'about_us_page.dart';
 import 'controller.dart';
+import 'home_page.dart';
 
 class TitleBar extends StatefulWidget {
   const TitleBar({super.key});
@@ -36,7 +38,37 @@ class _TitleBarState extends State<TitleBar> {
                 onEnter: (_) => setState(() => _hoveredIndex = index),
                 onExit: (_) => setState(() => _hoveredIndex = null),
                 child: GestureDetector(
-                  onTap: () => setState(() => _selectedIndex = index),
+                  onTap: () => setState(() { _selectedIndex = index;
+                  if(controllers.titleList[index] == 'About Us'){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (context) => AboutUsPage(),
+                      ),
+                    );
+                  } else if(controllers.titleList[index] == 'Gallery'){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (context) => AboutUsPage(),
+                      ),
+                    );
+                  } else if(controllers.titleList[index] == 'Classes'){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (context) => AboutUsPage(),
+                      ),
+                    );
+                  } else{
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  }
+                  }),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
